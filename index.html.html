@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Camila Millet | Estúdio de Laudos — V8</title>
+<style>
+:root{--ink:#344064;--ink2:#67728f;--muted:#98a1b7;--pink:#f17892;--pinkdark:#d9607c;--purple:#8d85c5;--lav:#f3f0fe;--blush:#fff0f3;--line:#eaeaf3;--paper:#fff;--shadow:0 9px 28px rgba(64,52,110,.075)}
+*{box-sizing:border-box}html{height:100%}body{margin:0;min-height:100%;font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);background:linear-gradient(128deg,#d59fc9 0%,#bba1d6 48%,#989de0 100%);padding:25px;font-size:14px}
+button,input,select,textarea{font:inherit}button{cursor:pointer;transition:.16s ease}button:hover{filter:brightness(.985)}.shell{max-width:1640px;min-height:calc(100vh - 50px);margin:auto;background:#f9f9fe;border:1px solid rgba(255,255,255,.8);border-radius:22px;box-shadow:0 25px 70px rgba(67,56,120,.2);display:grid;grid-template-columns:100px minmax(0,1fr);overflow:hidden}.sidebar{background:#fff;border-right:1px solid var(--line);padding:24px 12px;display:flex;align-items:center;flex-direction:column;gap:12px}.brand-mini{font-weight:800;font-size:11px;margin-bottom:21px;text-align:center;line-height:1.4}.brand-mini .heart{color:var(--pink);font-size:18px}.nav{border:0;background:transparent;color:#a2a9bc;width:76px;min-height:68px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border-radius:12px;font-size:10px;font-weight:700}.nav .ico{font-size:21px}.nav.active,.nav:hover{background:linear-gradient(130deg,#ff9cb0,#ed6d8b);color:#fff;box-shadow:0 8px 17px #ed6d8b38}.sidebar-note{margin-top:auto;color:#a4abc0;font-size:10px;text-align:center;line-height:1.5}.workspace{min-width:0}.toolbar{height:82px;background:rgba(255,255,255,.62);padding:16px 29px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:12px}.toolbar h1{margin:0;font-weight:800;font-size:22px;letter-spacing:-.04em}.eyebrow{text-transform:uppercase;color:var(--muted);letter-spacing:.08em;font-size:10px;font-weight:800}.toolbar-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{font-size:11px;padding:7px 11px;border:1px solid #e9e3f0;border-radius:999px;background:#fff;color:var(--ink2);font-weight:650}.pill.peach{color:#ba5871;background:#ffecf1;border-color:#f9d5df}.content{padding:25px 29px 45px}.view{display:none}.view.active{display:block}.section-intro{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:18px}.section-intro h2{font-size:22px;margin:4px 0 4px;letter-spacing:-.035em}.section-intro p{color:var(--ink2);margin:0;line-height:1.5}.btn{border:1px solid #e8e7ef;background:white;color:var(--ink);padding:10px 14px;border-radius:10px;font-weight:750;font-size:12px;box-shadow:0 3px 9px rgba(67,56,120,.04);display:inline-flex;align-items:center;gap:7px;justify-content:center}.btn.primary{background:linear-gradient(125deg,#ff91a8,#ed708f);color:white;border-color:transparent;box-shadow:0 6px 14px #e8759240}.btn.secondary{background:#f3efff;border:1px solid #e9e1fd;color:#6d65a4}.btn.danger{color:#ca5967}.btn:disabled{opacity:.48;cursor:not-allowed}.card{border:1px solid #ebebf5;background:#fff;border-radius:15px;box-shadow:var(--shadow);padding:20px}.card h3{margin:0 0 15px;font-size:15px;letter-spacing:-.025em}.dashboard-hero{background:linear-gradient(110deg,#fff,#fff7fb);border:1px solid #ffeaf1;border-radius:16px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:var(--shadow);margin-bottom:17px}.dashboard-hero h2{font-size:27px;margin:6px 0 8px;letter-spacing:-.05em}.dashboard-hero p{color:var(--ink2);line-height:1.5;margin:0;max-width:630px}.hero-mark{font-size:75px;color:#f5bac8;line-height:1}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:22px}.metric{background:#fff;border:1px solid #edecf5;border-radius:14px;padding:19px;box-shadow:var(--shadow)}.metric small{font-size:11px;color:var(--muted);font-weight:750}.metric strong{font-size:30px;display:block;margin-top:7px;letter-spacing:-.04em}.metric:nth-child(2) strong{color:#d8758e}.metric:nth-child(3) strong{color:#8e83c7}.metric:nth-child(4) strong{color:#599b80}.quick-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:16px}.quick-types{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.quick-type{padding:14px 15px;background:#fbfaff;border:1px solid #efedf9;border-radius:12px;text-align:left;font-weight:800;color:var(--ink);font-size:12px}.quick-type small{display:block;color:var(--muted);margin-top:5px;font-weight:500;font-size:11px}.quick-type:hover{border-color:#edb1c2;background:#fff6f8}.feature-stack{display:grid;gap:12px}.feature{padding:14px;border-radius:12px;background:#faf8ff;border:1px solid #eeebf6;color:var(--ink2);line-height:1.5;font-size:12px}.feature b{color:var(--ink)}
+.editor-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(400px,.82fr);gap:16px;align-items:start}.form-panel{display:grid;gap:14px;min-width:0}.preview-panel{position:sticky;top:16px;min-width:0}.preview-panel>.card{padding:14px}.preview-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;padding:4px}.stepper{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.step{border:1px solid #e9e6f4;border-radius:10px;background:white;color:#9099b0;padding:10px 13px;font-weight:750;font-size:12px}.step.active{background:#fff0f4;color:#d46e87;border-color:#f8cbd8}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.field-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.field.full{grid-column:1/-1}.field label,.settings-row label{display:block;font-size:10px;letter-spacing:.055em;font-weight:800;text-transform:uppercase;color:#939bb1;margin-bottom:6px}.field input,.field select,.field textarea,.settings-row input,.settings-row textarea{width:100%;background:#fff;border:1px solid #e3e5ef;color:#334365;padding:10px 11px;border-radius:9px;outline:0;min-width:0}.field :is(input,select,textarea):focus,.settings-row :is(input,textarea):focus{border-color:#d7b6e5;box-shadow:0 0 0 3px #e8d6f35c}.field textarea{resize:vertical;min-height:84px;line-height:1.45}.help{font-size:11px;color:#929bb1;line-height:1.5;margin:7px 0 0}.subhead{font-size:12px;font-weight:800;color:#6d7297;margin:20px 0 11px}.subhead:first-child{margin-top:0}.divider{border-top:1px solid var(--line);margin:18px 0}.inline-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.tip{padding:12px 14px;background:#f6f3ff;border:1px solid #e9e3ff;border-radius:11px;font-size:12px;color:#777196;line-height:1.5}.tip.warn{background:#fff9ee;border-color:#ffecd1;color:#956e41}.tip.good{background:#f0faf5;border-color:#d9f0e1;color:#4a8662}.template-snippet{border:1px solid #efeef7;border-radius:12px;padding:12px;margin-bottom:9px;background:#fdfcff}.template-snippet b{font-size:12px}.template-snippet p{font-size:11.5px;color:#7b849e;line-height:1.5;margin:6px 0 10px}.template-snippet button{padding:7px 10px}.module{display:none}.module.active{display:block}.clinical-section{background:#fcfbff;border:1px solid #eeebf7;border-radius:12px;padding:13px;margin:10px 0}.clinical-section .module-title{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:800;font-size:12px}.clinical-section textarea{min-height:72px}.field select{background:#fff}
+.report-scroll{max-height:min(80vh,1120px);overflow:auto;border-radius:12px;background:#eeeef5;padding:14px}.report-pages{display:grid;gap:14px}.report-sheet{background:white;box-shadow:0 3px 13px #34365b19;min-height:600px;padding:33px 31px 25px;color:#262d3a}.report-letterhead{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;border-bottom:1px solid #ececec;padding-bottom:19px}.report-letterhead .logo{font-family:Georgia,serif;font-size:25px;color:#b47a8a;letter-spacing:-1px;line-height:1.1}.report-letterhead .symbol{color:#d7a0b2;font-size:28px}.report-letterhead .specialty{text-align:right;font-size:9px;color:#8f95a3;max-width:165px;line-height:1.5}.report-patient{font-size:11px;margin:21px 0;line-height:1.9}.report-title{font-size:14px;letter-spacing:.015em;margin:27px 0 20px;font-weight:850;color:#202c43}.report-body{font-size:11.5px;line-height:1.65}.report-body p{margin:10px 0;white-space:pre-wrap}.report-body .r-subhead{font-weight:850;margin-top:19px;color:#242c44}.report-signature{margin-top:34px;font-size:11px;line-height:1.8;font-weight:800}.report-footer{font-size:9px;color:#9595a1;margin-top:28px;padding-top:12px;border-top:1px solid #ececf2;display:flex;justify-content:space-between;gap:12px}.sheet-image{display:grid;grid-template-rows:auto 1fr 1fr auto;gap:12px}.scan-block{margin:0 auto;width:100%;display:grid;align-content:center;gap:5px}.scan-block img{display:block;width:100%;height:190px;object-fit:contain;background:#06080a}.scan-block figcaption{font-size:10px;color:#747c94}.image-header-small{font-size:11px;font-weight:800;color:#8c8697}.preview-placeholder{font-size:11px;color:#a2a8b8;font-style:italic}.image-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.image-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.slot{position:relative;aspect-ratio:4/3;border:1.5px dashed #dedeea;border-radius:12px;background:#fbfaff;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#a3aac0;gap:6px;font-size:11px;cursor:pointer}.slot:hover{border-color:#ef9dad;background:#fff8fa}.slot img{width:100%;height:100%;object-fit:contain;background:#101014}.slot .number{position:absolute;top:7px;left:7px;border-radius:6px;background:#333b59d9;color:white;padding:4px 6px;font-size:9px}.slot .remove{position:absolute;top:6px;right:6px;border-radius:8px;border:0;background:#393649c7;color:#fff;padding:5px 9px;font-size:12px}.slot .bottom-tools{position:absolute;bottom:5px;right:5px;display:flex;gap:4px}.slot .bottom-tools button{background:#ffffffdd;border:0;color:#4f5170;padding:4px 7px;border-radius:6px;font-weight:800}.slot .empty-plus{font-size:30px;color:#c2b5d7;line-height:1}.slot.add{background:#fff3f6;border:1.5px solid #f8d9e1;color:#d77990;font-weight:800}.slot.add .empty-plus{color:#ec7791}.img-caption{margin-top:10px}.img-caption input{width:100%;border:1px solid #dedeea;border-radius:8px;padding:9px}.image-counter{font-size:12px;color:#8b91a8}.status-dot{display:inline-block;width:7px;height:7px;border-radius:100%;background:#ffc273;margin-right:5px}.records-table{width:100%;border-collapse:collapse}.records-table th{text-align:left;font-size:10px;letter-spacing:.08em;color:#9ba3b8;text-transform:uppercase;padding:12px 10px;border-bottom:1px solid var(--line)}.records-table td{padding:14px 10px;border-bottom:1px solid #f0eff6;font-size:12px;vertical-align:middle}.records-table tr:hover td{background:#fcfbff}.records-table .record-title{font-weight:800;color:#354265}.status-tag{display:inline-block;padding:6px 10px;border-radius:99px;background:#fff3e5;color:#ad7a42;font-size:10px;font-weight:800}.status-tag.signed{background:#eaf6f0;color:#468766}.status-tag.pending{background:#f0ebff;color:#7a6ab5}.settings-grid{max-width:850px;display:grid;gap:14px}.settings-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.settings-row textarea{min-height:70px}.step-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}.signed-area{display:grid;grid-template-columns:1fr 1fr;gap:12px}.signed-area a{color:#786db0}.hidden{display:none!important}#toast{position:fixed;bottom:22px;right:22px;background:#343c60;color:#fff;border-radius:11px;padding:12px 18px;font-size:12px;z-index:100;box-shadow:0 10px 30px #39417238;display:none;max-width:360px}#toast.show{display:block}#signatureUpload,#backupFile,#imageBatch,#imageFolder,#slotUpload,#logoUpload{display:none}.slot .bottom-tools button.caption-btn{font-size:11px;background:#fff0f4;color:#ab4968}.slot .slot-label{position:absolute;bottom:34px;left:4px;right:4px;background:#161d30a9;color:#fff;font-size:9px;padding:3px 5px;border-radius:4px;max-height:30px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none}.pill.status-error{color:#b5485e;background:#fff0f3;border-color:#fac5cf}.pill.status-ok{color:#367a5d;background:#ecf8f1;border-color:#dbefdf}dialog.caption-dialog{border:0;border-radius:16px;max-width:min(550px,calc(100vw - 28px));padding:0;box-shadow:0 22px 70px #34325a48}dialog.caption-dialog::backdrop{background:#1f214d70;backdrop-filter:blur(4px)}.caption-dialog .modal{max-width:550px;width:100%}.caption-modal-layout{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start}.caption-modal-layout img{width:100%;aspect-ratio:4/3;object-fit:contain;border-radius:9px;background:#151922}.caption-modal-layout label{display:block;font-size:11px;font-weight:800;color:#69728c;margin-bottom:7px}.caption-modal-layout input{width:100%;border:1px solid #e0e2ed;padding:11px;border-radius:9px}@media(max-width:550px){.caption-modal-layout{grid-template-columns:1fr}.caption-modal-layout img{max-height:150px}}a.external{color:#7567ab;text-decoration:none;font-size:12px;font-weight:750}.external:hover{text-decoration:underline}.empty-state{color:#9da4b4;padding:28px;text-align:center}.modal-bg{display:none;position:fixed;inset:0;background:#322b4f77;z-index:99;align-items:center;justify-content:center;padding:20px}.modal-bg.open{display:flex}.modal{max-width:550px;width:100%;background:#fff;border-radius:16px;padding:25px;box-shadow:0 24px 70px #29223b3d}.modal h3{margin:0 0 12px}.modal p{line-height:1.6;color:var(--ink2)}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.logo-config-thumb{max-height:65px;max-width:190px;object-fit:contain}.signature-config-thumb{max-height:90px;max-width:220px;object-fit:contain;background:white;border:1px solid #e8e5ef;border-radius:10px;padding:6px}.report-signature .signature-image{display:block;width:auto;max-width:205px;max-height:72px;object-fit:contain;margin-bottom:4px}.review-approval{display:flex;gap:11px;align-items:flex-start;margin-top:16px;padding:14px;background:#f6f3ff;border:1px solid #e9e4fc;border-radius:12px;color:#495273;font-size:12px;line-height:1.5}.review-approval input{width:17px;height:17px;flex:0 0 17px;margin:2px 0 0;accent-color:#d96c88}.mobile-note{display:none}
+@media(max-width:1250px){body{padding:10px}.shell{min-height:calc(100vh - 20px)}.editor-grid{grid-template-columns:1fr}.preview-panel{position:static}.report-scroll{max-height:750px}.quick-layout{grid-template-columns:1fr}}@media(max-width:740px){body{padding:0;background:#f7f7fd}.shell{border-radius:0;display:block;min-height:100vh}.sidebar{flex-direction:row;padding:10px 7px;position:static;gap:4px;justify-content:space-around}.brand-mini{display:none}.nav{width:auto;padding:7px;min-height:45px;flex:1;font-size:9px}.nav .ico{font-size:16px}.sidebar-note{display:none}.toolbar{height:auto;padding:15px;align-items:flex-start;flex-wrap:wrap}.toolbar h1{font-size:19px}.content{padding:16px 12px 35px}.section-intro{align-items:start;flex-direction:column}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-types{grid-template-columns:1fr}.field-grid,.field-grid.three,.field-grid.four,.settings-row,.signed-area{grid-template-columns:1fr}.image-slots{grid-template-columns:repeat(2,1fr)}.card{padding:15px}.stepper{gap:5px}.step{font-size:10px;padding:9px}.report-scroll{padding:7px}.report-sheet{padding:22px 18px}.report-letterhead .logo{font-size:22px}.toolbar-right{width:100%}}
+@page{size:A4;margin:0}
+@media print{
+ html,body{background:#fff!important;margin:0;padding:0;font-family:Arial,sans-serif}
+ .shell{display:block;border:0;border-radius:0;box-shadow:none}.sidebar,.toolbar,.section-intro,.form-panel,.stepper,.preview-top,.dashboard-hero,.stats,.quick-layout,.records-table,.settings-grid,.mobile-note,#toast,.tip{display:none!important}
+ .content{padding:0}.view{display:none!important}#view-editor{display:block!important}.editor-grid{display:block}.preview-panel{display:block!important}.preview-panel>.card{border:0;padding:0;box-shadow:none;background:#fff}.report-scroll{max-height:none;overflow:visible;background:#fff;padding:0}.report-pages{display:block}.report-sheet{border:0;box-shadow:none;width:210mm;min-height:auto;padding:18mm 19mm 16mm;break-after:page;page-break-after:always}.report-sheet:last-child{break-after:auto;page-break-after:auto}.report-sheet.sheet-image{height:296mm;display:flex;flex-direction:column;justify-content:space-between;gap:6mm}.sheet-image .report-letterhead{flex:0 0 auto}.sheet-image .scan-block{height:107mm;max-height:107mm;margin:0 auto}.sheet-image .scan-block img{height:96mm;object-fit:contain}.report-footer{margin-top:auto}.preview-panel>.card>p.help{display:none!important}.report-title{font-size:13pt}.report-body{font-size:10.5pt;line-height:1.5}.report-body p{break-inside:avoid}.report-patient,.report-signature{font-size:9.5pt}.report-letterhead .logo{font-size:24pt}
+}
+
+/* V7 — acesso direto aos modelos, sem banner de apresentação */
+.models-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:2px 0 17px}
+.models-heading .eyebrow{margin-bottom:4px}
+.models-heading h2{font-size:24px;line-height:1.2;letter-spacing:-.035em;margin:0 0 6px;color:#344064}
+.models-heading p{margin:0;color:#8791ab;font-size:12px}
+.models-heading .btn{white-space:nowrap}
+.models-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:29px}
+.models-grid .quick-type{position:relative;min-height:163px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:7px;padding:18px 19px;text-align:left;background:#fff;border:1px solid #eceaf5;border-radius:15px;box-shadow:var(--shadow);font-weight:800;font-size:14px;line-height:1.35;color:#3b476b}
+.models-grid .quick-type:hover,.models-grid .quick-type:focus-visible{border-color:#e8abbc;transform:translateY(-2px);box-shadow:0 13px 25px #8e7aa01b;outline:0}
+.models-grid .quick-type .model-icon{width:38px;height:38px;border-radius:11px;background:#fff0f4;color:#d9748e;display:grid;place-items:center;font-size:19px;line-height:1;font-weight:600;margin-bottom:2px}
+.models-grid .quick-type:nth-child(2) .model-icon,.models-grid .quick-type:nth-child(5) .model-icon{background:#f0edff;color:#8879c1}
+.models-grid .quick-type:nth-child(3) .model-icon{background:#edf4ff;color:#718ec4}
+.models-grid .quick-type:nth-child(4) .model-icon{background:#ebf8f3;color:#60a58c}
+.models-grid .quick-type small{display:block;font-size:11px;font-weight:500;color:#919bb2;line-height:1.4;margin:0}
+.models-grid .quick-type .model-arrow{position:absolute;right:17px;bottom:15px;color:#c7849c;font-size:18px;line-height:1}
+.models-grid .quick-type.model-blank{border:1.5px dashed #e6cade;background:#fff8fb;color:#bc6481;box-shadow:none}
+.models-grid .quick-type.model-blank .model-icon{background:#fbe6ee;color:#ce6e8b}
+.overview-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}
+.overview-heading h3{margin:0;font-size:14px;color:#354265}
+.text-link{border:0;background:transparent;color:#b46786;font-size:12px;font-weight:750;padding:6px 0}
+.text-link:hover{text-decoration:underline}
+#view-dashboard .stats{margin-bottom:0}
+.model-picker{width:min(550px,calc(100vw - 32px));max-width:550px}
+.model-picker-top{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.model-picker-top h3{font-size:20px;margin:3px 0 7px;letter-spacing:-.03em}
+.model-picker-top p{margin:0;color:#8993a9;font-size:12px;line-height:1.4}
+.picker-close{border:1px solid #ece9f3;border-radius:9px;width:31px;height:31px;background:#fff;color:#9a91a6;font-size:22px;line-height:1}
+.model-picker-options{display:grid;gap:8px}
+.model-picker-options button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;border:1px solid #eeecf6;border-radius:11px;padding:12px 14px;background:#fff;color:#354265;text-align:left;font-weight:700;font-size:12px}
+.model-picker-options button:hover{border-color:#e9bdcc;background:#fff8fa}
+.model-picker-options button small{display:block;font-size:10.5px;color:#9ca3b5;font-weight:450;margin-top:4px}
+.model-picker-options button .chevron{font-size:18px;color:#cd7c9b}
+@media(max-width:1110px){.models-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:570px){.models-heading{align-items:flex-start;flex-direction:column}.models-grid{grid-template-columns:1fr}.models-grid .quick-type{min-height:130px}.model-picker .modal{padding:20px}}
+@media print{.model-picker,.models-grid,.models-heading,.overview-heading{display:none!important}}
+
+/* V8 — painel único com resumo e histórico */
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.dashboard-heading{margin:2px 0 19px}
+.dashboard-heading h2{font-size:24px;letter-spacing:-.04em;margin:4px 0 6px;color:#344064}
+.dashboard-heading p{font-size:12px;color:#8490a7;line-height:1.5;margin:0}
+#view-dashboard .stats{margin-bottom:22px}
+.dashboard-history{padding:22px 22px 8px}
+.history-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}
+.history-toolbar h3{margin:0 0 4px;font-size:16px}
+.history-toolbar p{margin:0;color:#919bb1;font-size:11.5px;line-height:1.5}
+.history-search{width:min(340px,100%)}
+.history-search label{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#939bb1;font-weight:800;display:block;margin-bottom:6px}
+.history-search input{background:#fbfbfe;width:100%;border:1px solid #e6e7ef;color:#344064;border-radius:9px;padding:10px 11px;outline:0;font-size:12px}
+.history-search input:focus{border-color:#e8adbd;box-shadow:0 0 0 3px #fff1f5}
+.history-scroll{width:100%;overflow-x:auto}
+.dashboard-history .records-table{min-width:630px}
+.dashboard-history .records-table tr:last-child td{border-bottom:0}
+@media(max-width:740px){.history-toolbar{align-items:stretch;flex-direction:column;gap:12px}.history-search{width:100%}.dashboard-history{padding:17px 14px 6px}.toolbar-right{width:auto}}
+@media print{.dashboard-heading,.dashboard-history{display:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+ <div class="brand-mini"><span class="heart">♥</span> C.Millet<br><span style="font-size:9px;color:#adb2c6;font-weight:500">Laudos USG</span></div>
+ <button class="nav active" data-nav="dashboard"><span class="ico">▦</span>Painel</button>
+ <button class="nav" data-nav="editor"><span class="ico">✎</span>Novo laudo</button>
+ <button class="nav" data-nav="settings"><span class="ico">⚙</span>Ajustes</button>
+ <button class="nav" data-nav="guide"><span class="ico">ⓘ</span>Ajuda</button>
+ <div class="sidebar-note">V8 • uso local<br>sem transmissão automática</div>
+</aside>
+<div class="workspace">
+<header class="toolbar">
+ <div><div class="eyebrow">Camila Millet · Ultrassonografia</div><h1 id="viewTitle">Painel de laudos</h1></div>
+ <div class="toolbar-right"><button id="quickNew" class="btn primary">Novo laudo</button></div>
+ <div class="visually-hidden"><span id="dataStatus">Teste local</span><span id="autoSaveState" aria-live="polite">Rascunho não salvo</span></div>
+</header>
+<main class="content">
+<section id="view-dashboard" class="view active">
+  <div class="dashboard-heading">
+    <div class="eyebrow">Visão geral</div>
+    <h2>Resumo dos laudos</h2>
+    <p>Acompanhe os registros criados e encontre rapidamente os exames já salvos.</p>
+  </div>
+  <div class="stats">
+    <div class="metric"><small>Exames cadastrados</small><strong id="statTotal">0</strong></div>
+    <div class="metric"><small>Rascunhos</small><strong id="statDraft">0</strong></div>
+    <div class="metric"><small>Em revisão</small><strong id="statPending">0</strong></div>
+    <div class="metric"><small>Com imagens</small><strong id="statSigned">0</strong></div>
+  </div>
+  <div class="card dashboard-history">
+    <div class="history-toolbar">
+      <div><h3>Histórico de laudos</h3><p>Laudos registrados neste navegador e neste dispositivo.</p></div>
+      <div class="history-search"><label for="searchRecords">Buscar laudo</label><input id="searchRecords" placeholder="Nome da paciente ou tipo de exame" autocomplete="off"></div>
+    </div>
+    <div class="history-scroll"><table class="records-table">
+      <thead><tr><th>Paciente</th><th>Exame</th><th>Data</th><th>Status</th><th>Ações</th></tr></thead>
+      <tbody id="recordsBody"><tr><td colspan="5" class="empty-state">Carregando os registros...</td></tr></tbody>
+    </table></div>
+  </div>
+</section>
+<section id="view-editor" class="view">
+ <div class="section-intro"><div><div class="eyebrow">Editor de exames</div><h2>Elaboração de laudo</h2><p>O documento à direita acompanha o preenchimento. Nenhum achado clínico é presumido.</p></div><div class="inline-actions"><button id="saveDraftTop" class="btn">Salvar rascunho</button><button id="printTop" class="btn primary">↓ Gerar PDF</button></div></div>
+ <div class="stepper"><button class="step active" data-step="0">01 · Paciente</button><button class="step" data-step="1">02 · Achados</button><button class="step" data-step="2">03 · Imagens</button><button class="step" data-step="3">04 · Revisão e PDF</button></div>
+ <div class="editor-grid"><div class="form-panel">
+ <div class="module active" data-module="0">
+  <div class="card"><h3>Dados da paciente</h3><div class="field-grid"><div class="field full"><label>Nome completo *</label><input data-f="patient" placeholder="Nome da paciente" autocomplete="off"></div><div class="field"><label>Documento (CPF/RG) *</label><input data-f="document" placeholder="Documento de identificação"></div><div class="field"><label>Data de nascimento</label><input type="date" data-f="birth"></div><div class="field"><label>Data do exame *</label><input type="date" data-f="examDate"></div><div class="field"><label>Hora do exame *</label><input type="time" data-f="examTime"></div></div></div>
+  <div class="card"><h3>Dados do exame</h3><div class="field-grid"><div class="field full"><label>Modalidade / modelo *</label><select data-f="examType" id="examSelect"></select></div><div class="field full"><label>Indicação clínica</label><textarea data-f="indication" placeholder="Indicação do exame, se pertinente"></textarea></div><div class="field"><label>Solicitante (opcional)</label><input data-f="requester" placeholder="Médico solicitante"></div><div class="field"><label>Local do exame</label><select data-f="setting"><option value="">Não mencionar</option><option>Consultório</option><option>Domiciliar</option><option>Hospitalar</option></select></div></div><div class="tip" style="margin-top:14px">Os dados da paciente e o modelo selecionado serão usados no laudo. Ao trocar de modelo, os campos gerais permanecem; os campos específicos não são apagados.</div></div>
+ </div>
+ <div class="module" data-module="1">
+  <div class="card"><h3 id="clinicalTitle">Preenchimento clínico</h3><p class="help" style="margin-top:-9px;margin-bottom:14px">Os textos do modelo original ficam disponíveis como frases rápidas. Devem ser inseridos somente após a avaliação médica.</p><div id="clinicalFields"></div></div>
+  <div class="card"><h3>Descrição complementar e conclusão</h3><div class="field-grid"><div class="field full"><label>Descrição adicional (texto livre)</label><textarea rows="5" data-f="additional" placeholder="Outros achados, limitações ou observações"></textarea></div><div class="field full"><label>Conclusão / impressão diagnóstica *</label><textarea rows="5" data-f="conclusion" placeholder="Conclusão redigida ou revisada pela médica"></textarea></div><div class="field full"><label>Recomendação clínica (opcional)</label><textarea rows="2" data-f="recommendation"></textarea></div></div></div>
+ </div>
+ <div class="module" data-module="2">
+  <div class="card"><div class="image-tools"><div><h3 style="margin-bottom:3px">Imagens do ultrassom</h3><span class="image-counter" id="imageCount">0 imagens inseridas · 6 espaços disponíveis</span></div><div class="inline-actions"><button class="btn" id="folderUpload">▤ Importar pasta do pen drive</button><button class="btn primary" id="batchUpload">＋ Selecionar imagens</button></div></div><div class="tip"><b>Fluxo do pen drive:</b> escolha uma pasta com as capturas JPG/PNG, confirme a seleção e reorganize as imagens se necessário. Clique em um slot para trocar uma imagem individual. Use ← → para ordenar e ✎ para adicionar legendas opcionais.</div><div class="image-slots" id="imageSlots" style="margin-top:14px"></div><div class="inline-actions" style="margin-top:14px"><button class="btn secondary" id="addSlot">＋ Adicionar espaço</button><button class="btn" id="removeEmptySlots">Redefinir espaços vazios</button></div><p class="help">Na exportação, as imagens aparecem em páginas posteriores, duas por página. Formatos previstos: JPG, PNG, WebP e BMP. Arquivos DICOM não são suportados nesta versão. Imagens grandes podem exceder o armazenamento do navegador.</p></div>
+ </div>
+ <div class="module" data-module="3">
+  <div class="card"><h3>Conferência do documento</h3><div id="checklist" class="feature-stack"></div><div class="step-actions"><button class="btn" id="saveDraftFinal">Salvar rascunho</button><button class="btn primary" id="preparePdf">↓ Imprimir / Salvar PDF</button></div><p class="help">Após conferir o texto e autorizar a inclusão da assinatura visual cadastrada, escolha “Salvar como PDF” na janela de impressão. A imagem da assinatura não constitui assinatura eletrônica digital.</p></div>
+  <div class="card"><h3>Assinatura visual fixa</h3>
+    <p class="help">A imagem da assinatura é cadastrada uma única vez em <b>Configurações</b> e pode ser aplicada à versão impressa do laudo após conferência da médica.</p>
+    <div class="tip warn" style="margin-top:12px"><b>Importante:</b> uma imagem de assinatura não comprova a autoria nem a integridade de um arquivo eletrônico. Este recurso não realiza assinatura eletrônica/digital. Para emissão clínica digital, verifique os requisitos legais aplicáveis antes de utilizar os documentos.</div>
+    <div class="fixed-signature-info" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px"><img id="signStepThumb" class="signature-config-thumb" alt="Assinatura visual cadastrada" style="display:none"><div><b id="signStepStatus">Assinatura visual não cadastrada</b><br><button class="btn secondary" type="button" id="goSignatureSettings" style="margin-top:9px">Configurar assinatura</button></div></div>
+    <label class="review-approval"><input type="checkbox" id="approveVisual"> <span><b>Conferi este laudo como médica responsável.</b><br>Autorizo a aplicação da assinatura visual fixa neste documento.</span></label>
+    <p class="help">Esta aprovação é individual por laudo e será desmarcada se os dados forem alterados. O PDF continua sem assinatura digital.</p>
+  </div>
+ </div>
+ <div class="card"><div class="step-actions" style="margin-top:0"><button class="btn" id="prevStep">← Voltar</button><button class="btn primary" id="nextStep">Próximo →</button></div></div>
+ </div>
+ <div class="preview-panel"><div class="card"><div class="preview-top"><div><div class="eyebrow">Visualização</div><b style="font-size:13px">Prévia do laudo</b></div><span class="pill peach" id="previewStatus">Rascunho</span></div><div class="report-scroll"><div class="report-pages" id="reportPages"></div></div><p class="help" style="padding:0 4px">Prévia dinâmica. A versão impressa utiliza formato A4 e imagens em páginas separadas.</p></div></div>
+ </div>
+</section>
+<section id="view-settings" class="view"><div class="section-intro"><div><div class="eyebrow">Personalização</div><h2>Perfil profissional e identidade visual</h2><p>Os dados da médica aparecem nos documentos exportados.</p></div></div><div class="settings-grid"><div class="card"><h3>Dados do profissional</h3><div class="settings-row"><div class="field"><label>Nome profissional</label><input id="sName"></div><div class="field"><label>CRM</label><input id="sCrm"></div><div class="field"><label>RQE</label><input id="sRqe"></div><div class="field"><label>Área de atuação no cabeçalho</label><input id="sSpecialty"></div><div class="field full"><label>Endereço profissional para os documentos *</label><textarea id="sAddress" placeholder="Informe o endereço profissional da médica"></textarea></div><div class="field"><label>Contato (opcional)</label><input id="sContact"></div><div class="field"><label>Site (opcional)</label><input id="sWebsite"></div></div><div class="step-actions"><button id="saveProfile" class="btn primary">Salvar informações</button></div></div><div class="card"><h3>Marca / logotipo</h3><p class="help">Se houver uma imagem oficial do logo, anexe-a aqui. Isso evita tentar recriar a identidade visual a partir de um PDF.</p><div class="inline-actions" style="margin-top:12px"><button id="selectLogo" class="btn">Escolher logotipo</button><button id="clearLogo" class="btn danger">Remover logo</button><img class="logo-config-thumb" id="logoThumb" alt="Prévia do logotipo"></div></div><div class="card"><h3>Assinatura visual da médica</h3>
+  <p class="help">Cadastre uma imagem PNG ou JPG da assinatura <b>fornecida e autorizada pela Dra. Camila</b>. O arquivo será utilizado na área de assinatura dos laudos que ela aprovar.</p>
+  <div class="inline-actions" style="margin-top:13px"><button type="button" class="btn primary" id="selectSignature">Escolher imagem</button><button type="button" class="btn danger" id="clearSignature">Remover assinatura</button><img id="signatureThumb" class="signature-config-thumb" alt="Imagem da assinatura visual" style="display:none"></div>
+  <p id="signatureSettingsInfo" class="help">Nenhuma assinatura visual cadastrada.</p>
+  <div class="tip warn" style="margin-top:13px">Esta assinatura visual fica armazenada neste navegador, sem criptografia própria. O protótipo não fornece autenticação ou assinatura eletrônica; não utilize com dados reais de pacientes sem avaliação de segurança e conformidade.</div>
+ </div><div class="card"><h3>Backup e recuperação</h3><div class="tip warn">Dados clínicos são sensíveis. Este protótipo salva localmente no navegador, sem criptografia própria, autenticação ou sincronização. Não utilize como repositório definitivo de prontuários. Faça testes com dados fictícios e cuide dos backups.</div><div class="inline-actions" style="margin-top:14px"><button id="exportBackup" class="btn">↓ Exportar backup JSON</button><button id="importBackup" class="btn secondary">↑ Importar backup JSON</button></div></div></div></section>
+<section id="view-guide" class="view"><div class="section-intro"><div><div class="eyebrow">Manual do piloto</div><h2>Como utilizar o sistema</h2><p>Um arquivo HTML local para testar o fluxo, sem instalação de software ou servidor.</p></div></div><div class="settings-grid"><div class="card"><h3>Etapas</h3><div class="feature-stack"><div class="feature"><b>1 · Comece pelo tipo de exame.</b> Clique em Novo laudo e selecione o modelo. Os campos clínicos mudam conforme a modalidade.</div><div class="feature"><b>2 · Preencha as medidas.</b> Use as frases dos modelos em Word somente quando forem compatíveis com os achados efetivamente avaliados.</div><div class="feature"><b>3 · Traga as imagens.</b> Conecte o pen drive ao notebook, importe as imagens e ajuste a ordem. O sistema não lê imagens DICOM nem os dados das medidas automaticamente.</div><div class="feature"><b>4 · Revise e imprima como PDF.</b> O documento possui uma primeira parte textual e páginas posteriores com até duas imagens por página. O bloco de assinatura pode receber a imagem previamente cadastrada.</div><div class="feature"><b>5 · Faça a revisão.</b> A médica confere o laudo, aprova a aplicação de sua assinatura visual cadastrada e imprime ou exporta o PDF. A imagem não constitui assinatura eletrônica.</div></div></div><div class="card"><h3>Limitações desta versão</h3><p style="color:var(--ink2);line-height:1.7">Não calcula idade gestacional, peso fetal ou percentis automaticamente; esses valores exigem referências clínicas escolhidas pela médica. Não reconhece achados por IA, não realiza assinatura eletrônica, não verifica a validade criptográfica e não possui banco de dados central, login ou criptografia de dados. A aprovação clínica dos textos e a revisão legal e de segurança são necessárias antes do uso em produção.</p></div></div></section>
+</main>
+</div>
+</div>
+<input type="file" id="imageBatch" multiple accept="image/jpeg,image/png,image/webp,image/bmp"><input type="file" id="imageFolder" webkitdirectory directory multiple><input type="file" id="slotUpload" accept="image/jpeg,image/png,image/webp,image/bmp"><input type="file" id="backupFile" accept="application/json"><input type="file" id="logoUpload" accept="image/*"><input type="file" id="signatureUpload" accept="image/png,image/jpeg,image/webp">
+<dialog id="captionDialog" class="caption-dialog" aria-labelledby="captionTitle"><div class="modal"><h3 id="captionTitle">Editar legenda da imagem</h3><div class="caption-modal-layout"><img id="captionImage" alt="Prévia da imagem selecionada"><div><label for="captionInput">Legenda opcional</label><input id="captionInput" maxlength="120" placeholder="Ex.: Medida de CCN — Embrião 1"><p class="help">A legenda será mostrada abaixo da imagem no PDF.</p></div></div><div class="modal-actions"><button class="btn" type="button" id="captionCancel">Cancelar</button><button class="btn primary" type="button" id="captionSave">Salvar legenda</button></div></div></dialog><div id="toast" role="status"></div><div class="modal-bg" id="modalBg"><div class="modal"><h3 id="modalTitle">Atenção</h3><p id="modalText"></p><div class="modal-actions"><button class="btn" id="modalCancel">Cancelar</button><button class="btn primary" id="modalOk">Continuar</button></div></div></div>
+<dialog id="modelPickerDialog" class="caption-dialog model-picker" aria-labelledby="modelPickerTitle">
+  <div class="modal">
+    <div class="model-picker-top"><div><div class="eyebrow">Novo laudo</div><h3 id="modelPickerTitle">Qual exame deseja iniciar?</h3><p>Selecione uma modalidade para abrir o formulário correspondente.</p></div><button type="button" class="picker-close" id="modelPickerClose" aria-label="Fechar seleção">×</button></div>
+    <div id="modelPickerOptions" class="model-picker-options"></div>
+  </div>
+</dialog>
+
+<script>
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const trim=s=>String(s??'').trim();
+const now=()=>{let d=new Date();return {date:[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'),time:d.toTimeString().slice(0,5)}};
+const dateBR=s=>s&&s.includes('-')?s.split('-').reverse().join('/'):(s||'—');
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const TITLES={obs:'ULTRASSONOGRAFIA OBSTÉTRICA',dop:'ULTRASSONOGRAFIA OBSTÉTRICA COM DOPPLER',morf:'ULTRASSONOGRAFIA OBSTÉTRICA MORFOLÓGICA 2º TRIMESTRE',tv:'ULTRASSONOGRAFIA TRANSVAGINAL OBSTÉTRICA',parts:'ULTRASSONOGRAFIA DE PARTES MOLES'};
+const TYPE_DESCS={obs:'Acompanhamento gestacional e biometria',dop:'Biometria e índices Doppler',morf:'Avaliação morfológica e biometria ampliada',tv:'Gestação inicial e embriões',parts:'Região, achados e medidas'};
+const PROFILE_DEFAULT={name:'Dra. Camila Millet',crm:'CRM RJ: 52862070',rqe:'RQE: 42833',specialty:'Médica ultrassonografista',address:'',contact:'',website:'',logo:'',signatureImage:''};
+let profile={...PROFILE_DEFAULT},db=null,active=null,step=0,currentView='dashboard',slotSelected=0,itemsCache=[],loading=false;
+let saveTimer=null,saveInProgress=false,dirtyRevision=0,lastSavedRevision=0;
+let captionTargetIndex=null;
+function openCaptionEditor(i){
+ const img=active?.images?.[i];if(!img)return;
+ captionTargetIndex=i;
+ $('#captionImage').src=img.data;
+ $('#captionInput').value=img.caption||'';
+ $('#captionDialog').showModal();
+ $('#captionInput').focus();
+}
+function commitCaption(){
+ if(captionTargetIndex==null)return;
+ ensureEditable();const img=active?.images?.[captionTargetIndex];if(!img)return;
+ img.caption=$('#captionInput').value.trim().slice(0,120);
+ $('#captionDialog').close();captionTargetIndex=null;
+ reportChange();renderImageSlots();renderPreview();
+}
+
+function autosaveUi(text,cls=''){
+ const el=$('#autoSaveState');if(!el)return;el.textContent=text;
+ el.classList.remove('status-ok','status-error');if(cls)el.classList.add(cls);
+}
+function scheduleAutosave(){
+ if(!active)return;
+ dirtyRevision++;
+ clearTimeout(saveTimer);
+ if(!db){autosaveUi('Salvamento indisponível','status-error');return}
+ autosaveUi('Alterações pendentes');
+ const id=active.id,rev=dirtyRevision;
+ saveTimer=setTimeout(()=>persistAuto(id,rev),1200);
+}
+async function persistAuto(id,rev){
+ if(!db||!active||active.id!==id)return;
+ if(saveInProgress){saveTimer=setTimeout(()=>persistAuto(id,rev),550);return}
+ saveInProgress=true;autosaveUi('Salvando rascunho...');
+ try{
+  await putReport(active);
+  lastSavedRevision=rev;
+  autosaveUi(dirtyRevision===rev?'Rascunho salvo':'Novas alterações...',dirtyRevision===rev?'status-ok':'');
+  await refreshStats();
+ }catch(e){autosaveUi('Falha ao salvar','status-error');toast('Não foi possível salvar o rascunho: '+e.message)}
+ finally{saveInProgress=false;if(dirtyRevision!==rev && active?.id===id){clearTimeout(saveTimer);saveTimer=setTimeout(()=>persistAuto(id,dirtyRevision),950)}}
+}
+function reportChange(){scheduleAutosave()}
+
+function fresh(type='obs'){const dt=now();return {id:uid(),createdAt:Date.now(),updatedAt:Date.now(),status:'draft',type,fields:{examType:type,examDate:dt.date,examTime:dt.time},images:Array.from({length:6},()=>null),approvedForExport:false}};
+function f(key){return trim(active?.fields?.[key])}
+function ensureEditable(){
+ if(!active)return;
+ // Toda alteração após aprovação exige nova revisão médica.
+ if(active.approvedForExport){active.approvedForExport=false;const check=$('#approveVisual');if(check)check.checked=false;}
+ if(active.status!=='draft')active.status='draft';
+}
+function nf(key,val){ensureEditable();active.fields[key]=val;active.updatedAt=Date.now();reportChange()}
+function toast(msg){let t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200)}
+function ask(title,message,ok){$('#modalTitle').textContent=title;$('#modalText').textContent=message;$('#modalBg').classList.add('open');$('#modalOk').onclick=()=>{$('#modalBg').classList.remove('open');ok?.()};$('#modalCancel').onclick=()=>$('#modalBg').classList.remove('open')}
+function openModelPicker(){const picker=$('#modelPickerDialog');if(!picker.open)picker.showModal()}
+function closeModelPicker(){const picker=$('#modelPickerDialog');if(picker.open)picker.close()}
+function showView(v){currentView=v;$$('.view').forEach(e=>e.classList.toggle('active',e.id==='view-'+v));$$('.nav').forEach(e=>e.classList.toggle('active',e.dataset.nav===v));$('#viewTitle').textContent=({dashboard:'Painel de laudos',editor:'Novo laudo',settings:'Configurações',guide:'Orientações'})[v]||v;$('#quickNew').style.display=v==='editor'?'none':'';if(v==='dashboard')refreshStats();if(v==='settings')fillProfileSettings()}
+function newReport(type='obs'){closeModelPicker();clearTimeout(saveTimer);active=fresh(type);dirtyRevision=0;lastSavedRevision=0;autosaveUi('Novo rascunho não salvo');showView('editor');stepTo(0);rebuildEditor();renderPreview();toast('Novo rascunho iniciado')}
+function stepTo(i){step=Math.max(0,Math.min(3,i));$$('.module').forEach(el=>el.classList.toggle('active',Number(el.dataset.module)===step));$$('.step').forEach(el=>el.classList.toggle('active',Number(el.dataset.step)===step));$('#prevStep').disabled=step===0;$('#nextStep').textContent=step===3?'Voltar ao início ↻':'Próximo →';if(step===2)renderImageSlots();if(step===3)renderChecklist()}
+const COMMON_OBS=[
+ {k:'weeks',label:'Idade gestacional · semanas',type:'number',min:0},{k:'days',label:'Dias',type:'number',min:0,max:6},{k:'basis',label:'Base para idade gestacional',options:['','USG do 1º trimestre','DUM','USG anterior','Outra']},
+ {k:'fetusCount',label:'Número de fetos',options:['','Único','Gemelar','Múltiplo']},{k:'situation',label:'Situação fetal',options:['','Longitudinal','Transversa','Oblíqua']},{k:'presentation',label:'Apresentação',options:['','Cefálica','Pélvica','Córmica','Indeterminada']},
+ {k:'back',label:'Dorso',options:['','À esquerda','À direita','Anterior','Posterior']},{k:'movement',label:'Movimentação fetal',options:['','Ativa','Presente','Reduzida','Ausente','Não avaliada']},{k:'fcf',label:'Frequência cardíaca fetal (bpm)',type:'number',min:0},
+ {k:'liquid',label:'Líquido amniótico',options:['','Volume normal','Reduzido','Aumentado','Outro']},{k:'placenta',label:'Localização placentária',options:['','Anterior','Posterior','Fúndica','Lateral direita','Lateral esquerda','Outra']},{k:'placentaGrade',label:'Grau placentário',options:['','0','I','II','III','Não avaliado']}
+];
+const BIOMETRY=[{k:'dbp',label:'Diâmetro biparietal (mm)'},{k:'cc',label:'Circunferência cefálica (mm)'},{k:'ca',label:'Circunferência abdominal (mm)'},{k:'femur',label:'Fêmur (mm)'},{k:'weight',label:'Peso fetal estimado (g)'},{k:'percentile',label:'Percentil do peso'},{k:'bioWeeks',label:'IG pela biometria · semanas'},{k:'bioDays',label:'Dias da biometria'}];
+const MORPH_EXTRA=[{k:'ventriculo',label:'Ventrículo lateral (mm)'},{k:'cerebelo',label:'Cerebelo (mm)'},{k:'cisterna',label:'Cisterna magna (mm)'},{k:'umero',label:'Úmero (mm)'},{k:'cord',label:'Cordão umbilical',options:['','Trivascular com inserção normal','Outro']},{k:'anatomyNotes',label:'Anexos fetais / outras observações',type:'textarea'}];
+const DOPPLER=[{k:'uDirPi',label:'A. uterina direita · PI'},{k:'uDirRi',label:'A. uterina direita · RI'},{k:'uEsqPi',label:'A. uterina esquerda · PI'},{k:'uEsqRi',label:'A. uterina esquerda · RI'},{k:'umbPi',label:'A. umbilical · PI'},{k:'mcaPi',label:'A. cerebral média · PI'},{k:'cpr',label:'Relação cérebro-placentária (informada)'}];
+const MORPH_SECTIONS=[
+ ['head','Cabeça','Caixa craniana íntegra e de contornos regulares. Perfil de aspecto aparentemente normal e lábios aparentemente íntegros.'],
+ ['brain','Encéfalo','A foice do cérebro, os ventrículos, os plexos coroides, o septo pelúcido, o cerebelo e a cisterna magna foram visualizados e encontram-se com seus padrões anatômicos aparentemente preservados.'],
+ ['spine','Coluna','Aparentemente sem alterações.'],
+ ['chest','Tórax','Parede torácica e arcos costais sem alterações aparentes. Ápice cardíaco voltado para a esquerda, com visualização das 4 câmaras cardíacas e grandes vasos da base. Área pulmonar de textura homogênea. Ausência de derrame pleural e pericárdico.'],
+ ['abdomen','Abdome','Parede abdominal íntegra. Estômago e alças intestinais aparentemente normais. Fígado de textura homogênea. Ausência de ascite.'],
+ ['uro','Trato gênito-urinário','Rins tópicos e com textura normal. Ausência de dilatação pielocalicial ou ureteral. Bexiga visualizada e aparentemente normal. Genitália identificada.'],
+ ['limbs','Membros','Visualizados os quatro membros com os respectivos 12 ossos longos, de aspecto sonográfico.']
+];
+const MORPH_NOTE='O exame morfológico tem uma sensibilidade de aproximadamente 85% quando realizado entre 22 e 24 semanas, diminuindo fora deste período e podendo variar conforme a posição fetal, número de fetos, volume de líquido amniótico e compleição física da paciente. Portanto, a normalidade deste exame não exclui completamente a possibilidade de alterações estruturais do feto. Este exame não possui boa acurácia para rastreio de aneuploidias fetais. A morfologia cardíaca pode ser melhor avaliada pelo exame de ecocardiografia fetal, a critério clínico.';
+const TV_FIELDS=[{k:'dum',label:'Data da última menstruação',type:'text',placeholder:'Ex.: incerta, ou data informada'},{k:'uterus',label:'Útero · descrição',type:'textarea'},{k:'cervix',label:'Colo uterino',type:'textarea'},{k:'decidua',label:'Decidualização',type:'textarea'},{k:'sacDescription',label:'Cavidade e sacos gestacionais · descrição',type:'textarea'},{k:'ovaries',label:'Ovários e anexos',type:'textarea'},{k:'freeFluid',label:'Líquido livre pélvico',type:'textarea'},{k:'embryos',label:'Número de embriões visualizados',options:['1','2','3']},{k:'chorionicity',label:'Corionicidade / amnionicidade (conforme avaliação)',type:'text'}];
+const TV_PRESETS=[['uterus','Útero em AVF, de contornos regulares e ecotextura homogênea.'],['cervix','Colo uterino de espessura preservada e ecotextura homogênea.'],['decidua','Decidualização homogênea.'],['sacDescription','Cavidade uterina contendo saco gestacional único, de limites precisos, sem sinais de descolamento, apresentando embrião em seu interior. Atividade cardioembrionária regular.'],['ovaries','Ovários visibilizados.'],['freeFluid','Ausência de líquido livre em cavidade pélvica.']];
+const PARTS=[{k:'region',label:'Região avaliada',type:'text'},{k:'side',label:'Lateralidade',options:['','Direita','Esquerda','Mediana','Bilateral']},{k:'probe',label:'Transdutor / sonda',type:'text'},{k:'findingType',label:'Achado principal',options:['','Sem alterações','Coleção','Nódulo','Cisto','Lipoma','Hérnia','Outro']},{k:'echo',label:'Ecogenicidade',type:'text'},{k:'content',label:'Conteúdo',type:'text'},{k:'plane',label:'Plano anatômico',type:'text'},{k:'size1',label:'Medida 1 (cm)'},{k:'size2',label:'Medida 2 (cm)'},{k:'size3',label:'Medida 3 (cm)'},{k:'volume',label:'Volume informado (ml)'},{k:'tract',label:'Trajeto cutâneo',options:['','Presente','Ausente','Não avaliado']},{k:'gas',label:'Artefatos sugestivos de gás',options:['','Presentes','Ausentes','Não avaliado']},{k:'partsObservation',label:'Descrição do achado / estruturas adjacentes',type:'textarea'}];
+function fieldHTML(def){let {k,label,type,options,placeholder,min,max}=def;let v=active.fields[k]??'';let attrs=`data-f="${esc(k)}"`;if(type==='textarea')return `<div class="field ${type==='textarea'?'full':''}"><label>${esc(label)}</label><textarea ${attrs} placeholder="${esc(placeholder||'Preencher após avaliação médica')}">${esc(v)}</textarea></div>`;if(options){return `<div class="field"><label>${esc(label)}</label><select ${attrs}>${options.map(o=>`<option value="${esc(o)}" ${String(v)===String(o)?'selected':''}>${esc(o||'Selecione...')}</option>`).join('')}</select></div>`}return `<div class="field"><label>${esc(label)}</label><input ${attrs} type="${esc(type||'text')}" value="${esc(v)}" placeholder="${esc(placeholder||'')}" ${min!=null?`min="${min}"`:''} ${max!=null?`max="${max}"`:''}></div>`}
+function group(title,defs,cls='three'){return `<div class="subhead">${esc(title)}</div><div class="field-grid ${cls}">${defs.map(fieldHTML).join('')}</div>`}
+function defaultButtons(entries){return `<div class="subhead">Frases rápidas do modelo recebido <span style="font-weight:500;color:#a2a6ba">(inserir após conferência clínica)</span></div>${entries.map(([k,value])=>`<div class="template-snippet"><b>${esc(k.replace(/^[a-z]/,c=>c.toUpperCase()))}</b><p>${esc(value)}</p><button class="btn secondary" type="button" data-preset="${esc(k)}">Inserir no campo correspondente</button></div>`).join('')}`}
+function buildClinical(){if(!active)return;let type=active.type;let html='';if(['obs','dop','morf'].includes(type)){
+ html+=group('Idade gestacional, estática e anexos fetais',COMMON_OBS,'three');html+=group('Biometria fetal',BIOMETRY,'four');
+ if(type==='dop')html+=group('Doppler obstétrico',DOPPLER,'three')+`<div class="tip warn" style="margin-top:12px">Os índices são apenas registrados. A interpretação de fluxo, percentis e relação cérebro-placentária deve ser escrita pela médica.</div>`;
+ if(type==='morf'){
+ html+=group('Biometria e anexos adicionais',MORPH_EXTRA,'three');html+=`<div class="subhead">Morfologia fetal · avaliações por estrutura</div>`;
+ html+=MORPH_SECTIONS.map(([k,title,standard])=>`<div class="clinical-section"><div class="module-title"><span>${esc(title)}</span><button type="button" class="btn secondary" data-preset="${k}" style="padding:6px 9px;font-size:10px">Inserir texto do modelo</button></div><div class="field"><textarea data-f="${k}" placeholder="Descreva após examinar a estrutura">${esc(f(k))}</textarea></div><p class="help">Texto-base: ${esc(standard)}</p></div>`).join('');html+=`<div class="clinical-section"><div class="module-title"><span>Nota de limitações do modelo recebido</span><button type="button" class="btn secondary" data-preset="morphDisclaimer" style="padding:6px 9px;font-size:10px">Inserir nota</button></div><div class="field"><textarea rows="5" data-f="morphDisclaimer" placeholder="Nota opcional para revisão profissional">${esc(f('morphDisclaimer'))}</textarea></div><p class="help">Texto recebido contém percentual de sensibilidade não verificado nesta etapa. Confirmar ou adaptar com a médica antes de uso assistencial.</p></div>`;
+ }
+} else if(type==='tv'){
+ html+=group('Gestação inicial e características uterinas',TV_FIELDS,'three');html+=`<div class="subhead">Medidas dos embriões / sacos gestacionais</div><div id="embryoFields">${embryoHTML()}</div>`;
+ html+=defaultButtons(TV_PRESETS);
+} else if(type==='parts'){
+ html+=group('Localização, achados e medidas',PARTS,'three');html+=`<div class="tip" style="margin-top:13px">Volume é digitado manualmente. Não há cálculo automático nem sugestão diagnóstica sem validação.</div>`;
+ html+=defaultButtons([['partsObservation','Planos musculares adjacentes individualizados. Tela subcutânea e derme das áreas adjacentes apresentando aspecto habitual.']]);
+}$('#clinicalTitle').textContent=TITLES[type];$('#clinicalFields').innerHTML=html;
+ $$('#clinicalFields [data-preset]').forEach(btn=>btn.addEventListener('click',()=>applyPreset(btn.dataset.preset)));
+ $('#clinicalFields [data-f="embryos"]')?.addEventListener('change',()=>{setTimeout(()=>{let host=$('#embryoFields');if(host){host.innerHTML=embryoHTML();renderPreview()}},0)});
+}
+function embryoHTML(){let count=Math.max(1,Math.min(3,Number(f('embryos')||1)));return Array.from({length:count},(_,n)=>{let i=n+1;return `<div class="clinical-section"><div class="module-title">Embrião / saco gestacional ${i}</div><div class="field-grid three">${[
+ {k:`sg${i}`,label:'Saco gestacional · diâmetro médio (mm)'},{k:`ccn${i}`,label:'CCN (mm)'},{k:`vv${i}`,label:'Vesícula vitelínica (mm)'},
+ {k:`fce${i}`,label:'FCE (bpm)'},{k:`igW${i}`,label:'IG pela medida · semanas'},{k:`igD${i}`,label:'IG pela medida · dias'}
+ ].map(fieldHTML).join('')}</div></div>`}).join('')}
+function applyPreset(k){let presets=Object.fromEntries([...TV_PRESETS,...MORPH_SECTIONS.map(([key,_title,v])=>[key,v]),['morphDisclaimer',MORPH_NOTE],['partsObservation','Planos musculares adjacentes foram individualizados. Tela subcutânea e derme das áreas adjacentes apresentando aspecto habitual.']]);let text=presets[k];if(text==null)return;let old=f(k);if(old&&!confirm('Substituir a descrição já preenchida pelo texto padrão?'))return;nf(k,text);let input=$$('[data-f]').find(x=>x.dataset.f===k);if(input)input.value=text;renderPreview();toast('Texto inserido. Revise conforme os achados do exame.')}
+function rebuildEditor(){
+ if(!active)return;
+ $('#examSelect').innerHTML=Object.entries(TITLES).map(([k,v])=>`<option value="${k}" ${active.type===k?'selected':''}>${esc(v)}</option>`).join('');
+ $$('#view-editor [data-f]').forEach(el=>{let key=el.dataset.f;if(key==='examType')el.value=active.type;else if(!$('#clinicalFields').contains(el))el.value=active.fields[key]??''});
+ buildClinical();renderImageSlots();renderChecklist();
+ $('#approveVisual').checked=!!active.approvedForExport;
+ renderSignatureStatus();
+ $('#previewStatus').textContent=statusLabel(active);
+}
+function statusLabel(r){if(r.status==='ready')return'PDF preparado · assinatura visual';return r.approvedForExport?'Revisado pela médica':'Rascunho'}
+function line(text){return `<p>${esc(text)}</p>`}
+function sectionHead(text){return `<p class="r-subhead">${esc(text)}</p>`}
+function measure(label,key,unit='mm'){return f(key)?line(`${label} = ${f(key)} ${unit}`):''}
+function sectionBlocks(){if(!active)return'';const type=active.type;let h='';
+ if(f('indication'))h+=line('Indicação: '+f('indication'));if(f('setting'))h+=line('Local do exame: '+f('setting'));
+ if(['obs','dop','morf'].includes(type)){
+  if(f('weeks'))h+=line(`Idade gestacional: ${f('weeks')} semanas${f('days')?` e ${f('days')} dias`:''}${f('basis')?` (cálculo realizado pela ${f('basis')})`:''}.`);
+  let parts=[];if(f('fetusCount'))parts.push(`Gestação ${f('fetusCount').toLowerCase()}`);if(f('situation'))parts.push(`situação ${f('situation').toLowerCase()}`);if(f('presentation'))parts.push(`apresentação ${f('presentation').toLowerCase()}`);if(f('back'))parts.push(`dorso ${f('back').toLowerCase()}`);if(parts.length)h+=line(parts.join(', ')+'.');
+  if(f('movement'))h+=line(`Movimentação fetal: ${f('movement').toLowerCase()}.`);if(f('fcf'))h+=line(`Frequência cardíaca fetal = ${f('fcf')} bpm.`);
+  if(f('liquid'))h+=line(`Líquido amniótico: ${f('liquid').toLowerCase()}.`);if(f('placenta')||f('placentaGrade'))h+=line(`Placenta${f('placenta')?` implantada em parede ${f('placenta').toLowerCase()}`:''}${f('placentaGrade')?`. Grau ${f('placentaGrade')} de maturidade`:''}.`);
+  let biom=[['Diâmetro biparietal','dbp','mm'],['Circunferência cefálica','cc','mm'],['Circunferência abdominal','ca','mm'],['Comprimento do fêmur','femur','mm']];
+  if(type==='morf')biom.splice(2,0,['Ventrículo lateral','ventriculo','mm'],['Cerebelo','cerebelo','mm'],['Cisterna magna','cisterna','mm']);
+  if(type==='morf')biom.push(['Comprimento do úmero','umero','mm']);
+  let b=biom.map(x=>measure(...x)).join('');if(f('weight'))b+=line(`Peso fetal estimado = ${f('weight')} g${f('percentile')?` (percentil: ${f('percentile')})`:''}.`);else if(f('percentile'))b+=line(`Percentil do peso fetal informado: ${f('percentile')}.`);if(b)h+=sectionHead('Biometria fetal')+b;
+  if(f('bioWeeks'))h+=line(`Biometria fetal compatível com ${f('bioWeeks')} semanas${f('bioDays')?` e ${f('bioDays')} dias`:''}.`);
+  if(type==='dop'){
+   let a=[];[['Artéria uterina direita','uDirPi','uDirRi'],['Artéria uterina esquerda','uEsqPi','uEsqRi'],['Artéria umbilical','umbPi',null],['Artéria cerebral média','mcaPi',null]].forEach(([name,pi,ri])=>{if(f(pi)||ri&&f(ri))a.push(line(`${name}: ${f(pi)?`PI ${f(pi)}`:''}${ri&&f(ri)?`  RI ${f(ri)}`:''}.`))});if(f('cpr'))a.push(line(`Relação cérebro-placentária informada = ${f('cpr')}.`));if(a.length)h+=sectionHead('Doppler obstétrico')+a.join('');
+  }
+  if(type==='morf'){
+   let a=MORPH_SECTIONS.filter(([k])=>f(k)).map(([k,t])=>line(`${t}. ${f(k)}`));if(a.length)h+=sectionHead('Morfologia fetal')+a.join('');if(f('cord'))h+=line(`Cordão umbilical: ${f('cord')}.`);if(f('anatomyNotes'))h+=line(f('anatomyNotes'));
+  }
+ } else if(type==='tv'){
+  if(f('dum'))h+=line('Data da última menstruação: '+f('dum')+'.');
+  for(const k of ['uterus','cervix','sacDescription','decidua'])if(f(k))h+=line(f(k));
+  let c=Math.max(1,Math.min(3,Number(f('embryos')||1)));
+  let b='';for(let i=1;i<=c;i++){let r=[];if(f('sg'+i))r.push(`Saco gestacional = ${f('sg'+i)} mm`);if(f('ccn'+i))r.push(`CCN = ${f('ccn'+i)} mm`);if(f('vv'+i))r.push(`Vesícula vitelínica = ${f('vv'+i)} mm`);if(f('fce'+i))r.push(`FCE = ${f('fce'+i)} bpm`);if(f('igW'+i))r.push(`IG pela medida: ${f('igW'+i)} semanas${f('igD'+i)?` e ${f('igD'+i)} dias`:''}`);if(r.length)b+=(c>1?sectionHead(`Embrião ${i}`):'')+r.map(x=>line(x+'.')).join('')};if(b)h+=sectionHead('Biometria')+b;
+  if(f('chorionicity'))h+=line(`Corionicidade / amnionicidade: ${f('chorionicity')}.`);if(f('ovaries'))h+=line(f('ovaries'));if(f('freeFluid'))h+=line(f('freeFluid'));
+ } else if(type==='parts'){
+  let s=[];if(f('probe'))s.push(`Avaliação realizada com ${f('probe')}`);if(f('region'))s.push(`em região ${f('region')}${f('side')?` à ${f('side').toLowerCase()}`:''}`);if(s.length)h+=line(s.join(', ')+'.');
+  let desc=[];if(f('findingType'))desc.push(`Achado: ${f('findingType').toLowerCase()}`);if(f('echo'))desc.push(`ecogenicidade ${f('echo')}`);if(f('content'))desc.push(`conteúdo ${f('content')}`);if(f('plane'))desc.push(`localização no ${f('plane')}`);if(desc.length)h+=line(desc.join(', ')+'.');let sizes=['size1','size2','size3'].map(f).filter(Boolean);if(sizes.length)h+=line(`Medidas informadas: ${sizes.join(' x ')} cm.`);if(f('volume'))h+=line(`Volume informado: ${f('volume')} ml.`);if(f('tract'))h+=line(`Trajeto cutâneo: ${f('tract').toLowerCase()}.`);if(f('gas'))h+=line(`Artefatos sugestivos de gás: ${f('gas').toLowerCase()}.`);if(f('partsObservation'))h+=line(f('partsObservation'));
+ }
+ if(f('additional'))h+=line(f('additional'));if(f('conclusion'))h+=sectionHead('Impressão diagnóstica / conclusão')+line(f('conclusion'));if(f('recommendation'))h+=line(f('recommendation'));if(type==='morf'&&f('morphDisclaimer'))h+=sectionHead('Observações e limitações')+line(f('morphDisclaimer'));
+ return h||`<p class="preview-placeholder">Preencha e confirme os achados clínicos para compor o corpo do laudo.</p>`;
+}
+function letterhead(){const photo=profile.logo?.startsWith('data:image/')?`<img src="${esc(profile.logo)}" alt="Logotipo" style="display:block;max-width:190px;max-height:60px;object-fit:contain">`:`<div class="logo"><span class="symbol">✿</span> Camila Millet</div>`;return `<div class="report-letterhead">${photo}<div class="specialty"><b>${esc(profile.specialty)}</b><br>${esc(profile.crm)} · ${esc(profile.rqe)}</div></div>`}
+function footer(){return `<div class="report-footer"><span>${esc(profile.contact||'')}${profile.contact&&profile.website?' · ':''}${esc(profile.website||'')}</span><span>${esc(profile.name)}</span></div>`}
+function signatureForPreview(){
+ const data=profile.signatureImage;
+ if(!active?.approvedForExport||!data||!/^data:image\/(png|jpeg|webp);base64,/i.test(data))return '';
+ return `<img class="signature-image" src="${esc(data)}" alt="Imagem da assinatura visual da médica">`;
+}
+function renderPreview(){if(!active)return;let status=statusLabel(active);$('#previewStatus').textContent=status;let meta=`<div class="report-patient"><b>Nome:</b> ${esc(f('patient')||'—')}<br><b>Documento:</b> ${esc(f('document')||'—')} &nbsp;&nbsp; <b>Nascimento:</b> ${esc(dateBR(f('birth')))}<br><b>Data do exame:</b> ${esc(dateBR(f('examDate')))} &nbsp;&nbsp; <b>Hora:</b> ${esc(f('examTime')||'—')}</div>`;let page=`<article class="report-sheet">${letterhead()}${meta}<div class="report-title">${esc(TITLES[active.type])}</div><div class="report-body">${sectionBlocks()}</div><div class="report-signature">${signatureForPreview()}${esc(profile.name)}<br>${esc(profile.crm)}<br>${esc(profile.rqe)}${profile.address?`<br><span style="font-weight:500;font-size:10px">${esc(profile.address)}</span>`:''}</div>${footer()}</article>`;
+ const pics=active.images.filter(Boolean);for(let i=0;i<pics.length;i+=2){let two=pics.slice(i,i+2);page+=`<article class="report-sheet sheet-image">${letterhead()}${two.map((x,k)=>`<figure class="scan-block"><img src="${x.data}" alt="Imagem ultrassonográfica ${i+k+1}"><figcaption>${esc(x.caption||`Imagem ${i+k+1}`)}</figcaption></figure>`).join('')}${two.length===1?'<div class="scan-block"></div>':''}${footer()}</article>`}$('#reportPages').innerHTML=page}
+function renderImageSlots(){if(!active)return;let slots=$('#imageSlots');slots.innerHTML='';active.images.forEach((img,i)=>{let div=document.createElement('div');div.className='slot';div.dataset.idx=i;div.innerHTML=img?`<span class="number">${i+1}</span><img alt="Imagem ${i+1}" src="${img.data}"><button class="remove" title="Remover imagem" data-remove="${i}">×</button>${img.caption?`<span class="slot-label" title="${esc(img.caption)}">${esc(img.caption)}</span>`:''}<div class="bottom-tools"><button type="button" data-move="${i}" data-offset="-1" title="Mover à esquerda">←</button><button type="button" class="caption-btn" data-caption="${i}" title="Editar legenda">✎</button><button type="button" data-move="${i}" data-offset="1" title="Mover à direita">→</button></div>`:`<span class="number">${i+1}</span><span class="empty-plus">＋</span><span>Inserir imagem</span>`;div.addEventListener('click',e=>{if(e.target.closest('button'))return;slotSelected=i;$('#slotUpload').click()});slots.appendChild(div)});let plus=document.createElement('button');plus.type='button';plus.className='slot add';plus.innerHTML='<span class="empty-plus">＋</span><span>Mais espaço</span>';plus.onclick=()=>{ensureEditable();active.images.push(null);reportChange();renderImageSlots()};slots.appendChild(plus);$('#imageCount').textContent=`${active.images.filter(Boolean).length} imagens inseridas · ${active.images.length} espaços disponíveis`;
+ $$('[data-remove]').forEach(x=>x.onclick=e=>{e.stopPropagation();ensureEditable();active.images[Number(x.dataset.remove)]=null;reportChange();renderImageSlots();renderPreview()});$$('[data-move]').forEach(x=>x.onclick=e=>{e.stopPropagation();let i=Number(x.dataset.move),j=i+Number(x.dataset.offset);if(j<0||j>=active.images.length)return;ensureEditable();[active.images[i],active.images[j]]=[active.images[j],active.images[i]];reportChange();renderImageSlots();renderPreview()});$$('[data-caption]').forEach(x=>x.onclick=e=>{e.stopPropagation();openCaptionEditor(Number(x.dataset.caption))})}
+function loadImage(file){return new Promise((res,rej)=>{if(!['image/jpeg','image/png','image/webp','image/bmp'].includes(file.type.toLowerCase()))return rej(new Error('Formato não suportado: '+file.name+'. Use JPG/PNG/WebP/BMP.'));if(file.size>35*1024*1024)return rej(new Error(`Imagem ${file.name} maior que 35 MB.`));let r=new FileReader();r.onload=()=>res({name:file.name,data:r.result,caption:''});r.onerror=()=>rej(new Error(`Falha ao carregar ${file.name}`));r.readAsDataURL(file)})}
+async function filesIntoSlots(files,at=null){if(!files?.length)return;ensureEditable();let arr=[];for(const file of files){try{arr.push(await loadImage(file))}catch(e){toast(e.message)}}if(at==null){for(const o of arr){let pos=active.images.findIndex(x=>!x);if(pos<0){pos=active.images.length;active.images.push(null)}active.images[pos]=o}}else{for(const o of arr){let pos=at++;while(active.images.length<=pos)active.images.push(null);active.images[pos]=o}}if(arr.length)reportChange();renderImageSlots();renderPreview();toast(`${arr.length} imagem(ns) importada(s).`)}
+function check(){let missing=[];if(!f('patient'))missing.push('nome da paciente');if(!f('document'))missing.push('documento de identificação');if(!f('examDate'))missing.push('data do exame');if(!f('examTime'))missing.push('hora do exame');if(!f('conclusion'))missing.push('conclusão médica');if(!profile.address)missing.push('endereço profissional (Ajustes)');return missing}
+function renderSignatureStatus(){
+ const image=profile.signatureImage||'';
+ const hasImage=/^data:image\/(png|jpeg|webp);base64,/i.test(image);
+ $('#signStepThumb').src=hasImage?image:'';
+ $('#signStepThumb').style.display=hasImage?'block':'none';
+ $('#signStepStatus').textContent=hasImage?'Assinatura visual cadastrada':'Assinatura visual não cadastrada';
+ $('#signatureThumb').src=hasImage?image:'';
+ $('#signatureThumb').style.display=hasImage?'block':'none';
+ $('#signatureSettingsInfo').textContent=hasImage?'Imagem cadastrada neste navegador.':'Nenhuma assinatura visual cadastrada.';
+}
+function renderChecklist(){if(!active)return;let checks=[
+ ['Paciente e documento',!!f('patient')&&!!f('document')],
+ ['Data e hora do exame',!!f('examDate')&&!!f('examTime')],
+ ['Endereço profissional cadastrado',!!profile.address],
+ ['Conclusão revisada pela médica',!!f('conclusion')],
+ ['Imagens anexadas (opcional conforme exame)',active.images.some(Boolean)],
+ ['Assinatura visual cadastrada',!!profile.signatureImage],
+ ['Revisão e autorização médica do documento',!!active.approvedForExport]
+];$('#checklist').innerHTML=checks.map(([label,ok],i)=>`<div class="feature" style="background:${ok?'#f2fbf5':'#fffbf6'};border-color:${ok?'#dcefe3':'#ffead7'}"><b style="color:${ok?'#4e9269':'#ad8159'}">${ok?'✓':'○'}</b> &nbsp;${esc(label)}${i===4?' <small>(opcional)</small>':''}</div>`).join('')}
+async function preparePrint(){
+ if(!active)return;
+ let missing=check();
+ const go=async()=>{
+   if(missing.length){active.approvedForExport=false;$('#approveVisual').checked=false;}
+   active.status=!missing.length&&active.approvedForExport&&profile.signatureImage?'ready':'draft';
+   active.updatedAt=Date.now();clearTimeout(saveTimer);
+   try{await putReport(active);lastSavedRevision=dirtyRevision;autosaveUi('Rascunho salvo','status-ok');refreshStats()}catch(e){toast('Não foi possível salvar antes de imprimir: '+e.message)}
+   renderPreview();window.print();
+ };
+ if(missing.length){ask('Campos a conferir',`Há campos pendentes: ${missing.join(', ')}. A impressão será somente para teste; não finalize como laudo clínico.`,go)}
+ else if(!profile.signatureImage){ask('Assinatura visual não cadastrada','O documento será exportado com nome, CRM e RQE, mas sem imagem de assinatura. Para inserir a imagem, acesse Configurações e faça o cadastro autorizado.',go)}
+ else if(!active.approvedForExport){ask('Revisão médica não confirmada','O documento será exportado sem a imagem da assinatura, pois não houve confirmação individual da revisão da médica. Não utilize esta impressão como laudo final.',go)}
+ else{ask('Conferência médica','A imagem da assinatura fixa será incluída neste PDF, após autorização neste laudo. Atenção: ela não tem validade de assinatura eletrônica ou digital.',go)}
+}
+function getDb(){return new Promise((res,rej)=>{if(!window.indexedDB)return rej(Error('Este navegador não disponibiliza armazenamento local.'));let req=indexedDB.open('camila-usg-piloto-v4',1);req.onupgradeneeded=()=>{let db=req.result;db.createObjectStore('reports',{keyPath:'id'})};req.onsuccess=()=>res(req.result);req.onerror=()=>rej(req.error)})}
+function database(action,arg){return new Promise((resolve,reject)=>{if(!db)return reject(Error('Armazenamento indisponível neste navegador.'));let tx=db.transaction('reports',action==='list'||action==='get'?'readonly':'readwrite'),store=tx.objectStore('reports'),req=action==='list'?store.getAll():action==='get'?store.get(arg):action==='delete'?store.delete(arg):store.put(arg);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+const allReports=()=>database('list');const putReport=r=>database('put',r);const deleteReport=id=>database('delete',id);
+async function saveReport(status){if(!active)return;clearTimeout(saveTimer);active.updatedAt=Date.now();if(status)active.status=status;try{await putReport(active);lastSavedRevision=dirtyRevision;autosaveUi('Rascunho salvo','status-ok');toast('Laudo salvo neste dispositivo.');refreshStats()}catch(e){autosaveUi('Falha ao salvar','status-error');toast('Erro ao salvar: '+e.message)}}
+async function refreshStats(){try{itemsCache=await allReports();$('#statTotal').textContent=itemsCache.length;$('#statDraft').textContent=itemsCache.filter(x=>x.status==='draft').length;$('#statPending').textContent=itemsCache.filter(x=>x.status==='ready').length;$('#statSigned').textContent=itemsCache.filter(x=>x.images?.some(Boolean)).length;$('#dataStatus').textContent='Armazenamento local ativo';renderRecords()}catch(e){$('#dataStatus').textContent='Salvamento indisponível';$('#recordsBody').innerHTML='<tr><td colspan="5" class="empty-state">Não foi possível carregar o histórico neste navegador.</td></tr>'}}
+function renderRecords(){const q=($('#searchRecords')?.value||'').toLowerCase();const arr=[...itemsCache].sort((a,b)=>b.updatedAt-a.updatedAt).filter(x=>(x.fields.patient||'').toLowerCase().includes(q)||(TITLES[x.type]||'').toLowerCase().includes(q));$('#recordsBody').innerHTML=arr.length?arr.map(r=>`<tr><td><span class="record-title">${esc(r.fields.patient||'Sem nome')}</span><br><span style="color:#a3a8b8;font-size:10px">${esc(r.fields.document||'')}</span></td><td>${esc(TITLES[r.type]||r.type)}</td><td>${esc(dateBR(r.fields.examDate))}</td><td><span class="status-tag ${r.status==='ready'?'signed':''}">${esc(statusLabel(r))}</span></td><td><div class="inline-actions"><button class="btn" data-open="${esc(r.id)}">Abrir</button><button class="btn danger" data-del="${esc(r.id)}">Excluir</button></div></td></tr>`).join(''):`<tr><td colspan="5" class="empty-state">Nenhum laudo salvo para esta pesquisa.</td></tr>`;$$('[data-open]').forEach(b=>b.onclick=async()=>{let r=await database('get',b.dataset.open);if(!r)return;clearTimeout(saveTimer);active=r;dirtyRevision=0;lastSavedRevision=0;autosaveUi('Registro carregado','status-ok');showView('editor');stepTo(0);rebuildEditor();renderPreview()});$$('[data-del]').forEach(b=>b.onclick=()=>ask('Excluir registro','Esta exclusão remove o laudo e os arquivos anexados deste navegador. Faça backup antes, se necessário.',async()=>{await deleteReport(b.dataset.del);await refreshStats();renderRecords();toast('Registro excluído.')}) )}
+function fillProfileSettings(){for(const [key,id] of [['name','sName'],['crm','sCrm'],['rqe','sRqe'],['specialty','sSpecialty'],['address','sAddress'],['contact','sContact'],['website','sWebsite']])$('#'+id).value=profile[key]||'';$('#logoThumb').src=profile.logo||'';$('#logoThumb').style.display=profile.logo?'block':'none';renderSignatureStatus()}
+function saveProfile(){for(const [key,id] of [['name','sName'],['crm','sCrm'],['rqe','sRqe'],['specialty','sSpecialty'],['address','sAddress'],['contact','sContact'],['website','sWebsite']])profile[key]=$('#'+id).value;try{localStorage.setItem('camila-usg-profile-v4',JSON.stringify(profile));toast('Perfil atualizado.')}catch(e){toast('Não foi possível salvar perfil: '+e.message)}renderPreview()}
+function dataUrlToBlob(url){let [meta,data]=url.split(',');let mime=(meta.match(/data:(.*?);/)||[])[1]||'application/pdf';let byte=atob(data),bytes=new Uint8Array(byte.length);for(let i=0;i<byte.length;i++)bytes[i]=byte.charCodeAt(i);return new Blob([bytes],{type:mime})}
+async function exportBackup(){let reports=await allReports();let blob=new Blob([JSON.stringify({format:'camila-usg-v4',exportedAt:new Date().toISOString(),profile,reports})],{type:'application/json'});let url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`Backup_Laudos_Camila_${now().date}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);toast('Backup exportado. Guarde-o em local seguro.')}
+async function importBackupFile(file){if(!file)return;try{let obj=JSON.parse(await file.text());if(obj.format!=='camila-usg-v4'||!Array.isArray(obj.reports))throw Error('Formato de backup incompatível');ask('Restaurar backup',`Serão importados ${obj.reports.length} registros. IDs já existentes serão substituídos pelo conteúdo do backup.`,async()=>{for(let r of obj.reports){if(r?.id&&r?.fields&&Array.isArray(r.images))await putReport(r)}if(obj.profile){profile={...PROFILE_DEFAULT,...obj.profile};localStorage.setItem('camila-usg-profile-v4',JSON.stringify(profile))}await refreshStats();renderRecords();renderPreview();toast('Backup importado.')})}catch(e){toast('Falha na importação: '+e.message)}}
+function attachEvents(){
+ $('#captionCancel').onclick=()=>$('#captionDialog').close();$('#captionSave').onclick=commitCaption;$('#captionDialog').addEventListener('close',()=>captionTargetIndex=null);
+ window.addEventListener('beforeunload',e=>{if(active && dirtyRevision>lastSavedRevision){e.preventDefault();e.returnValue=''}});
+ $$('.nav').forEach(x=>x.onclick=()=>x.dataset.nav==='editor'?openModelPicker():showView(x.dataset.nav));
+  $('#quickNew').onclick=openModelPicker;$('#searchRecords').oninput=renderRecords;
+ const niceNames={obs:'Obstétrica',dop:'Obstétrica com Doppler',morf:'Morfológica · 2º trimestre',tv:'Transvaginal obstétrica',parts:'Partes moles'};
+  $('#modelPickerOptions').innerHTML=Object.entries(TITLES).map(([k])=>`<button type="button" data-picktype="${k}"><span>${esc(niceNames[k])}<small>${esc(TYPE_DESCS[k])}</small></span><span class="chevron" aria-hidden="true">→</span></button>`).join('');
+  $$('#modelPickerOptions [data-picktype]').forEach(x=>x.onclick=()=>{closeModelPicker();newReport(x.dataset.picktype)});
+  $('#modelPickerClose').onclick=closeModelPicker;
+  $('#modelPickerDialog').addEventListener('click',e=>{if(e.target===$('#modelPickerDialog'))closeModelPicker()});
+ $$('.step').forEach(x=>x.onclick=()=>stepTo(Number(x.dataset.step)));$('#prevStep').onclick=()=>stepTo(step-1);$('#nextStep').onclick=()=>stepTo(step===3?0:step+1);
+ $('#view-editor').addEventListener('input',e=>{let x=e.target;if(x.dataset.f){nf(x.dataset.f,x.value);if(x.dataset.f==='examType'){active.type=x.value;buildClinical()}renderPreview();if(step===3)renderChecklist()}});
+ $('#view-editor').addEventListener('change',e=>{let x=e.target;if(x.dataset.f){nf(x.dataset.f,x.value);if(x.dataset.f==='examType'){active.type=x.value;buildClinical()}renderPreview();if(step===3)renderChecklist()}});
+ $('#saveDraftTop').onclick=()=>saveReport();$('#saveDraftFinal').onclick=()=>saveReport();$('#printTop').onclick=preparePrint;$('#preparePdf').onclick=preparePrint;
+ $('#batchUpload').onclick=()=>$('#imageBatch').click();$('#imageBatch').onchange=async e=>{await filesIntoSlots([...e.target.files]);e.target.value=''};
+ $('#folderUpload').onclick=()=>$('#imageFolder').click();$('#imageFolder').onchange=async e=>{const list=[...e.target.files].filter(f=>['image/jpeg','image/png','image/webp','image/bmp'].includes(f.type.toLowerCase())).sort((a,b)=>(a.webkitRelativePath||a.name).localeCompare(b.webkitRelativePath||b.name,'pt-BR',{numeric:true}));if(!list.length){toast('Nenhuma imagem compatível encontrada na pasta.');return}await filesIntoSlots(list);e.target.value=''};$('#slotUpload').onchange=async e=>{await filesIntoSlots([...e.target.files],slotSelected);e.target.value=''};
+ $('#addSlot').onclick=()=>{ensureEditable();active.images.push(null);reportChange();renderImageSlots()};$('#removeEmptySlots').onclick=()=>{ensureEditable();let imgs=active.images.filter(Boolean);active.images=[...imgs,...Array.from({length:Math.max(0,6-imgs.length)},()=>null)];reportChange();renderImageSlots();renderPreview()};
+ $('#saveProfile').onclick=saveProfile;$('#selectLogo').onclick=()=>$('#logoUpload').click();$('#logoUpload').onchange=async e=>{let file=e.target.files[0];if(!file)return;if(file.size>2*1024*1024){toast('Use uma imagem do logo com até 2 MB.');return}let image=await loadImage(file);profile.logo=image.data;saveProfile();fillProfileSettings()};$('#clearLogo').onclick=()=>{profile.logo='';saveProfile();fillProfileSettings()};
+ $('#selectSignature').onclick=()=>$('#signatureUpload').click();
+ $('#signatureUpload').onchange=async e=>{
+  const file=e.target.files[0];e.target.value='';if(!file)return;
+  if(!['image/png','image/jpeg','image/webp'].includes(file.type)){toast('Use PNG, JPG ou WebP.');return}
+  if(file.size>1.5*1024*1024){toast('A imagem da assinatura deve ter no máximo 1,5 MB.');return}
+  try{const result=await loadImage(file);profile.signatureImage=result.data;saveProfile();fillProfileSettings();renderPreview();renderChecklist();toast('Assinatura visual cadastrada.')}catch(err){toast('Não foi possível ler a assinatura: '+err.message)}
+ };
+ $('#clearSignature').onclick=()=>{
+  ask('Remover assinatura visual','A imagem deixará de aparecer nos próximos documentos visualizados ou impressos. Os arquivos PDF já exportados não serão alterados.',()=>{profile.signatureImage='';saveProfile();fillProfileSettings();renderPreview();renderChecklist()});
+ };
+ $('#goSignatureSettings').onclick=()=>showView('settings');
+ $('#approveVisual').onchange=e=>{
+  if(!active)return;
+  active.approvedForExport=!!e.target.checked;
+  if(!active.approvedForExport)active.status='draft';
+  active.updatedAt=Date.now();reportChange();renderPreview();renderChecklist();
+ };
+ $('#exportBackup').onclick=exportBackup;$('#importBackup').onclick=()=>$('#backupFile').click();$('#backupFile').onchange=e=>{importBackupFile(e.target.files[0]);e.target.value=''};
+ $('#reportPages').addEventListener('click',()=>{});
+}
+async function init(){attachEvents();try{let saved=JSON.parse(localStorage.getItem('camila-usg-profile-v4')||'null');if(saved)profile={...PROFILE_DEFAULT,...saved}}catch(e){}active=fresh('obs');rebuildEditor();renderPreview();try{db=await getDb();await refreshStats();autosaveUi('Rascunho não salvo')}catch(e){$('#dataStatus').textContent='Armazenamento não disponível';autosaveUi('Salvamento indisponível','status-error');toast('Armazenamento desativado. Use backup/exportação e teste em Chrome/Edge atualizado.')}}
+init();
+</script>
+</body></html>
